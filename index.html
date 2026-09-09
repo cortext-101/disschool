@@ -1,0 +1,251 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FriendCall</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="logo">FriendCall</div>
+  <div id="currentUser"></div>
+</header>
+
+<!-- LOGIN -->
+<div id="authScreen" class="auth-screen">
+
+  <div class="auth-box">
+
+    <h1>FriendCall</h1>
+    <p>Chat. Call. Hang out.</p>
+
+    <input id="username" placeholder="Username">
+    <input id="email" type="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+
+    <button id="signup">Create Account</button>
+    <button id="login" class="secondary">Log In</button>
+
+    <div id="authError"></div>
+
+  </div>
+
+</div>
+
+
+<!-- APP -->
+<div id="app" class="app" hidden>
+
+  <!-- SERVER BAR -->
+  <aside class="server-list">
+
+    <div id="servers"></div>
+
+    <button id="createServer" class="server-add">
+      +
+    </button>
+
+  </aside>
+
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-title">
+
+      <span id="serverName">
+        Select a server
+      </span>
+
+      <button id="inviteButton">
+        Invite
+      </button>
+
+    </div>
+
+
+    <div class="channel-section">
+
+      <div class="channel-title">
+        TEXT CHANNELS
+      </div>
+
+      <div id="textChannels"></div>
+
+      <button id="addTextChannel">
+        + Add Channel
+      </button>
+
+    </div>
+
+
+    <div class="channel-section">
+
+      <div class="channel-title">
+        VOICE CHANNELS
+      </div>
+
+      <div id="voiceChannels"></div>
+
+      <button id="addVoiceChannel">
+        + Add Voice
+      </button>
+
+    </div>
+
+
+    <div class="friends">
+
+      <div class="channel-title">
+        FRIENDS
+      </div>
+
+      <input id="friendEmail" placeholder="Friend's email">
+
+      <button id="addFriend">
+        Add Friend
+      </button>
+
+      <div id="friendsList"></div>
+
+    </div>
+
+
+    <button id="logout" class="logout">
+      Log Out
+    </button>
+
+  </aside>
+
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div id="welcome">
+
+      <h1>Welcome to FriendCall</h1>
+
+      <p>
+        Create a server or join one using an invite link.
+      </p>
+
+    </div>
+
+
+    <!-- CHAT -->
+
+    <div id="chatScreen" hidden>
+
+      <div class="channel-header">
+        <span id="channelName"></span>
+      </div>
+
+      <div id="messages"></div>
+
+      <form id="messageForm">
+
+        <input
+          id="messageInput"
+          placeholder="Message this channel..."
+          autocomplete="off"
+        >
+
+        <button>
+          Send
+        </button>
+
+      </form>
+
+    </div>
+
+
+    <!-- VOICE -->
+
+    <div id="voiceScreen" hidden>
+
+      <div class="voice-header">
+
+        <h2>
+          🔊 <span id="voiceChannelName"></span>
+        </h2>
+
+        <button id="leaveVoice">
+          Leave Voice
+        </button>
+
+      </div>
+
+
+      <div id="voiceMembers"></div>
+
+
+      <div class="voice-controls">
+
+        <button id="muteButton">
+          🎙️ Mute
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+
+<!-- INVITE -->
+
+<div id="invitePopup" class="popup" hidden>
+
+  <div class="popup-box">
+
+    <h2>Invite Friends</h2>
+
+    <p>
+      Send this link to anyone.
+    </p>
+
+    <input id="inviteLink" readonly>
+
+    <button id="copyInvite">
+      Copy Invite Link
+    </button>
+
+    <button id="closeInvite" class="secondary">
+      Close
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- JOIN -->
+
+<div id="joinPopup" class="popup" hidden>
+
+  <div class="popup-box">
+
+    <h2>You've been invited!</h2>
+
+    <p id="joinServerName"></p>
+
+    <button id="joinServer">
+      JOIN SERVER
+    </button>
+
+  </div>
+
+</div>
+
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
+```
